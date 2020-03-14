@@ -1,0 +1,8 @@
+zomato key
+ac8f17b4e7e299033d99a965f9e1ab8f
+
+the meal db
+https://www.themealdb.com/api/json/v1/1/search.php?s=
+
+yelp
+https://api.yelp.com/v3/businesses/search
