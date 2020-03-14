@@ -6,3 +6,6 @@ https://www.themealdb.com/api/json/v1/1/search.php?s=
 
 yelp
 https://api.yelp.com/v3/businesses/search
+
+googlemaps
+AIzaSyBDVSzsfJwrY1gLEYE0f0XqKvEDO_vE5pM  apikey
