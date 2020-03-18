@@ -32,8 +32,19 @@ getRecipes();
 
         .then(function(response){
             console.log(response);
+            console.log(yelpURL);
+            console.log(response.businesses[0].name);
+            console.log(response.businesses[0].url);
+            console.log(response.businesses[0].rating);
+            console.log(response.businesses[0].display_phone);
+            console.log(response.businesses[0].location.display_address[0] + response.businesses[0].location.display_address[1]);
+            console.log(response.businesses[0].location.display_address[1]);
         })
     }
     yelpCall();
 //dont delete this dummy
 });
+
+$("#restBtn").on("click", function(e) {
+    e.preventDefault();
+})
