@@ -11,30 +11,34 @@
 </head>
 
 <body>
-  <div class="ui huge header txHead">Monkey hungry</div>
-  <div class="container inline">
-    <div class="ui placeholder segment">
-      <div class="ui icon header">
-        <!-- <i class="search icon"></i> -->
-      </div>
+  <div class="container">
 
-      <div class="ui search searchBar">
-        <div class="ui icon input">
-          <input class="prompt" type="text" placeholder="hungry?">
+    <div class="ui placeholder segment">
+
+      <div class="ui txHead">The Hungry Monkey</div>
+      <!-- <div class="ui icon header"> -->
+        <!-- <i class="search icon"></i> -->
+      <!-- </div> -->
+
+        <!-- this is the search bar -->
+      <div class="ui grid center aligned">
+        <div class="ui massive icon input search-bar">
+          <input type="text" placeholder="Whatcha hungry for?">
           <i class="search icon"></i>
         </div>
-        <div class="results"></div>
       </div>
 
+      <!-- buttons -->
       <div class="inline">
-        <div class="ui primary button">get recipes</div>
-        <div class="ui button">to lazy</div>
+        <div class="ui primary button" id="recipeBtn">Feelin' productive, show me recipes</div>
+        <div class="ui button" id="restaurantBtn">Feelin' lazy, show me restaurants</div>
       </div>
+
     </div>
     
   </div>
-  
-  <div class="results container">
+  <!-- results container -->
+  <div class="container" id="results">
 
   </div>
 
