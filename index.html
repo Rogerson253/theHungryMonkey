@@ -6,26 +6,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Hungry Monkey</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Monofett&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-
+  <div class="ui huge header txHead">Monkey hungry</div>
   <div class="container inline">
     <div class="ui placeholder segment">
       <div class="ui icon header">
-        <i class="search icon"></i>
-        We don't have any documents matching your query
+        <!-- <i class="search icon"></i> -->
       </div>
+
+      <div class="ui search searchBar">
+        <div class="ui icon input">
+          <input class="prompt" type="text" placeholder="hungry?">
+          <i class="search icon"></i>
+        </div>
+        <div class="results"></div>
+      </div>
+
       <div class="inline">
-        <div class="ui primary button">Clear Query</div>
-        <div class="ui button">Add Document</div>
+        <div class="ui primary button">get recipes</div>
+        <div class="ui button">to lazy</div>
       </div>
     </div>
     
   </div>
   
-  <div class="resalts container">
+  <div class="results container">
 
   </div>
 
