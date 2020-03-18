@@ -9,10 +9,14 @@ $.ajax({
     method: "GET"
   })
     // We store all of the retrieved data inside of an object called "response"
-    .then(function(response) {
+    .then(function(recipeData) {
         
-        console.log(response);
+        console.log(recipeData);
         console.log(queryURL);
+
+        for(var j=0; j < 5; j++) {
+            console.log(recipeData.meals[j].strMeal);
+        }
 
     });
 }
