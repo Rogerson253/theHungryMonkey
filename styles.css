@@ -1,5 +1,6 @@
 body{
-    background-color: #0A3D62;
+    background-color:#218F76 ;
+    margin: 2%;
 }
  .search-bar{
      margin: 40px;
@@ -11,5 +12,8 @@ body{
     font-size: 100px;
     padding: 40px;
     margin: 20px;
+ }
+ .ui.placeholder.segment{
+     background-color: #7CEC9F;
  }
  
