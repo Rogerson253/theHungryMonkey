@@ -25,14 +25,14 @@ function getRecipes() {
             var recipeCard = $('<div class ="ui card">')
             var cardBody = $('<div class ="content">')
 
-            $('<p>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
+            $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
             console.log(recipeData.meals[j].strMeal);
             console.log(recipeData.meals[j].strArea);
             console.log(recipeData.meals[j].strYoutube);
 
 
             cardBody.appendTo(recipeCard);
-            recipeCard.appendto(resultSection);
+            recipeCard.appendTo(resultSection);
 
 
         }
