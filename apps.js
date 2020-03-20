@@ -42,7 +42,7 @@ function getRecipes() {
 
 
 
-    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville";
+    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=portland";
    function yelpCall() {
     $.ajax({
         url: yelpURL,
@@ -55,23 +55,22 @@ function getRecipes() {
         .then(function(response){
             console.log(response);
             console.log(yelpURL);
-            console.log(response.businesses[0].name);
-            console.log(response.businesses[0].url);
-            console.log(response.businesses[0].rating);
-            console.log(response.businesses[0].display_phone);
-            console.log(response.businesses[0].location.display_address[0] + response.businesses[0].location.display_address[1]);
-            console.log(response.businesses[0].location.display_address[1]);
+          
+            for (var i = 0; i < 3; i++) {
+                console.log(response.businesses[i].name);
+                console.log(response.businesses[i].url);
+                console.log(response.businesses[i].rating);
+                console.log(response.businesses[i].display_phone);
+                console.log(response.businesses[i].location.display_address[0] + response.businesses[0].location.display_address[1]);
+                console.log(response.businesses[i].location.display_address[1]);
+
+                var card = $("<div>");
+                card.addClass("ui card");
+                card.append("<h4>" + response.businesses[i].name + "<h4>");
+                $("#results").append(card);
+                }
         })
     }
-
-
-// $('#recipeBtn').on('click', function(e){
-//     e.preventDefault();
-//     getRecipes();
-// })
-// $("#restaurantBtn").on("click", function(e) {
-//     e.preventDefault();
-// })
 
 $( document ).ready(function() {
     $('#recipeBtn').on('click', function(e){
@@ -80,6 +79,7 @@ $( document ).ready(function() {
     })
     $("#restaurantBtn").on("click", function(e) {
         e.preventDefault();
+      yelpCall();
     })
 
 //dont delete this dummy
