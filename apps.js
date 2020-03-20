@@ -1,8 +1,9 @@
-$( document ).ready(function() {
-console.log("ready!");
+
+
+
 
 function getRecipes() {
-    var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=chicken"
+    var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
 
 $.ajax({
     url: queryURL,
@@ -16,16 +17,13 @@ $.ajax({
 
         for(var j=0; j < 5; j++) {
             console.log(recipeData.meals[j].strMeal);
-            console.log(recipeData.meals[j].strMeal);
-            console.log(recipeData.meals[j].strMeal);
-            console.log(recipeData.meals[j].strMeal);
-            console.log(recipeData.meals[j].strMeal);
+            console.log(recipeData.meals[j].strArea);
+            console.log(recipeData.meals[j].strYoutube);
         }
 
     });
 }
 
-getRecipes();
 
 
     var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville";
@@ -49,10 +47,20 @@ getRecipes();
             console.log(response.businesses[0].location.display_address[1]);
         })
     }
+
+
+$('#recipeBtn').on('click', function(e){
+    e.prevetDefault();
+})
+$("#restaurantBtn").on("click", function(e) {
+    e.preventDefault();
+})
+
+$( document ).ready(function() {
+
+    getRecipes();
     yelpCall();
+
 //dont delete this dummy
 });
 
-$("#restBtn").on("click", function(e) {
-    e.preventDefault();
-})
