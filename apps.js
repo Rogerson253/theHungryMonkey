@@ -1,24 +1,40 @@
 
-
+var resultSection = $('#results');
 
 
 function getRecipes() {
+    var userInput = $('#inputField').val();
+    console.log(userInput);
+
+    resultSection.empty();
+
     var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
 
-$.ajax({
+    $.ajax({
     url: queryURL,
     method: "GET"
-  })
+     })
     // We store all of the retrieved data inside of an object called "response"
     .then(function(recipeData) {
         
         console.log(recipeData);
         console.log(queryURL);
 
-        for(var j=0; j < 5; j++) {
+        for(var j=0; j < recipeData.meals.length; j++) {
+
+            var recipeCard = $('<div class ="ui card">')
+            var cardBody = $('<div class ="content">')
+
+            $('<p>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
             console.log(recipeData.meals[j].strMeal);
             console.log(recipeData.meals[j].strArea);
             console.log(recipeData.meals[j].strYoutube);
+
+
+            cardBody.appendTo(recipeCard);
+            recipeCard.appendto(resultSection);
+
+
         }
 
     });
@@ -49,17 +65,22 @@ $.ajax({
     }
 
 
-$('#recipeBtn').on('click', function(e){
-    e.prevetDefault();
-})
-$("#restaurantBtn").on("click", function(e) {
-    e.preventDefault();
-})
+// $('#recipeBtn').on('click', function(e){
+//     e.preventDefault();
+//     getRecipes();
+// })
+// $("#restaurantBtn").on("click", function(e) {
+//     e.preventDefault();
+// })
 
 $( document ).ready(function() {
-
-    getRecipes();
-    yelpCall();
+    $('#recipeBtn').on('click', function(e){
+        e.preventDefault();
+        getRecipes();
+    })
+    $("#restaurantBtn").on("click", function(e) {
+        e.preventDefault();
+    })
 
 //dont delete this dummy
 });
