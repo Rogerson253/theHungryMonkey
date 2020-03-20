@@ -10,8 +10,8 @@ body{
     font-family: 'Monofett', cursive;
     text-align: center;
     font-size: 100px;
-    padding: 40px;
-    margin: 20px;
+    padding: 10px;
+    margin: 10px;
  }
  .ui.placeholder.segment{
      background-color: #7CEC9F;
