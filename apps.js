@@ -42,8 +42,15 @@ function getRecipes() {
 
 
 
-    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=portland";
+    
    function yelpCall() {
+    
+    var queryTerm = "";
+    
+    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&term=" + queryTerm;
+
+
+
     $.ajax({
         url: yelpURL,
         method: "GET",
@@ -56,7 +63,7 @@ function getRecipes() {
             console.log(response);
             console.log(yelpURL);
           
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < 6; i++) {
                 console.log(response.businesses[i].name);
                 console.log(response.businesses[i].url);
                 console.log(response.businesses[i].rating);
