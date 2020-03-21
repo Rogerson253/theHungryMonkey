@@ -8,36 +8,36 @@ function getRecipes() {
 
     resultSection.empty();
 
-    var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
+        var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
 
-    $.ajax({
-    url: queryURL,
-    method: "GET"
-     })
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        })
     // We store all of the retrieved data inside of an object called "response"
-    .then(function(recipeData) {
-        
-        console.log(recipeData);
-        console.log(queryURL);
+        .then(function(recipeData) {
 
-        for(var j=0; j < recipeData.meals.length; j++) {
+            for(var j=0; j < recipeData.meals.length; j++) {
 
-            var recipeCard = $('<div class ="ui card">')
-            var cardBody = $('<div class ="content">')
+                var recipeCard = $('<div class ="ui card">')
 
-            $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
-            console.log(recipeData.meals[j].strMeal);
-            console.log(recipeData.meals[j].strArea);
-            console.log(recipeData.meals[j].strYoutube);
+                var imgDiv = $('<div class="image">');
+                $('<img src=' + recipeData.meals[j].strMealThumb + '>').appendTo(imgDiv);
+                imgDiv.appendTo(recipeCard);
+
+                var cardBody = $('<div class ="content">')
+                $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
+                $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
+                $('<a class="link" href="recipeData.meals[j].strYoutube">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
+
+                cardBody.appendTo(recipeCard);
+                recipeCard.appendTo(resultSection);
 
 
-            cardBody.appendTo(recipeCard);
-            recipeCard.appendTo(resultSection);
+            }
+        });
+    }
 
-
-        }
-
-    });
 }
 
 
