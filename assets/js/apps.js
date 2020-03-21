@@ -23,9 +23,17 @@ function getRecipes() {
         for(var j=0; j < recipeData.meals.length; j++) {
 
             var recipeCard = $('<div class ="ui card">')
-            var cardBody = $('<div class ="content">')
 
+            var imgDiv = $('<div class="image">');
+            $('<img src=' + recipeData.meals[j].strMealThumb + '>').appendTo(imgDiv);
+            imgDiv.appendTo(recipeCard);
+
+            var cardBody = $('<div class ="content">')
             $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
+            $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
+            $('<a class="link" href="recipeData.meals[j].strYoutube">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
+
+
             console.log(recipeData.meals[j].strMeal);
             console.log(recipeData.meals[j].strArea);
             console.log(recipeData.meals[j].strYoutube);
