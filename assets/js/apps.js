@@ -4,9 +4,9 @@ var resultSection = $('#results');
 
 function getRecipes() {
     var userInput = $('#inputField').val();
-    resultSection.empty(); 
+    console.log(userInput);
 
-    if (userInput !== "") {
+    resultSection.empty();
 
     var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
 
@@ -23,17 +23,9 @@ function getRecipes() {
         for(var j=0; j < recipeData.meals.length; j++) {
 
             var recipeCard = $('<div class ="ui card">')
-
-            var imgDiv = $('<div class="image">');
-            $('<img src=' + recipeData.meals[j].strMealThumb + '>').appendTo(imgDiv);
-            imgDiv.appendTo(recipeCard);
-
             var cardBody = $('<div class ="content">')
+
             $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
-            $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
-            $('<a class="link" href="recipeData.meals[j].strYoutube">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
-
-
             console.log(recipeData.meals[j].strMeal);
             console.log(recipeData.meals[j].strArea);
             console.log(recipeData.meals[j].strYoutube);
@@ -44,8 +36,8 @@ function getRecipes() {
 
 
         }
+
     });
-    }
 }
 
 
@@ -85,10 +77,17 @@ function getRecipes() {
 
                var card = $("<div class='ui card'>");
                
-               var imageDiv = $("<div class='image'>")
-               var image = $("<img />");
+
+               var imageLink = $("<a class='image'>");
+               imageLink.attr("href", response.businesses[i].url);
+            //    link.text(response.businesses[i].url).appendTo(description);
+
+
+
+            //    var imageDiv = $("<div class='image'>")
+               var image = $("<img />").appendTo(imageLink);
                image.attr("src", response.businesses[i].image_url);
-               imageDiv.append(image);
+            //    imageDiv.append(image);
 
                var content = $("<div class='content'>");
                var header = $("<div class='header'>");
@@ -99,13 +98,10 @@ function getRecipes() {
                $("<p>").text(response.businesses[i].location.display_address[0]).appendTo(description);
                $("<p>").text(response.businesses[i].location.display_address[1]).appendTo(description);
 
-               var link = $("<a>");
-               link.attr("href", response.businesses[i].url);
-               link.text(response.businesses[i].url).appendTo(description);
-
+               
               
                content.append(header, description);
-               card.append(imageDiv, content);
+               card.append(imageLink, content);
                resultSection.append(card);
             
             // ==================================================================================================
