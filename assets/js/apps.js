@@ -5,8 +5,8 @@ var resultSection = $('#results');
 function getRecipes() {
     var userInput = $('#inputField').val();
     console.log(userInput);
-
     resultSection.empty();
+    if (userInput !== "") {
 
         var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
 
