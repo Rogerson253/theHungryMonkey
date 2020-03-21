@@ -75,62 +75,62 @@ function getRecipes() {
 
             //    TESTING CARD LAYOUT
 
-            //    var card = $("<div class='ui card'>");
+               var card = $("<div class='ui card'>");
                
-            //    var imageDiv = $("<div class='image'>")
-            //    var image = $("<img />");
-            //    image.attr("src", response.businesses[i].image_url);
-            //    imageDiv.append(image);
+               var imageDiv = $("<div class='image'>")
+               var image = $("<img />");
+               image.attr("src", response.businesses[i].image_url);
+               imageDiv.append(image);
 
-            //    var content = $("<div class='content'>");
-            //    var header = $("<div class='header'>");
-            //    $("<h4>").text(response.businesses[i].name).appendTo(header);
+               var content = $("<div class='content'>");
+               var header = $("<div class='header'>");
+               $("<h4>").text(response.businesses[i].name).appendTo(header);
 
-            //    var description = $("<div class='description'>");
-            //    $("<p>").text(response.businesses[i].display_phone).appendTo(description);
-            //    $("<p>").text(response.businesses[i].location.display_address[0]).appendTo(description);
-            //    $("<p>").text(response.businesses[i].location.display_address[1]).appendTo(description);
+               var description = $("<div class='description'>");
+               $("<p>").text(response.businesses[i].display_phone).appendTo(description);
+               $("<p>").text(response.businesses[i].location.display_address[0]).appendTo(description);
+               $("<p>").text(response.businesses[i].location.display_address[1]).appendTo(description);
 
-            //    var link = $("<a>");
-            //    link.attr("href", response.businesses[i].url);
-            //    link.text(response.businesses[i].url).appendTo(description);
+               var link = $("<a>");
+               link.attr("href", response.businesses[i].url);
+               link.text(response.businesses[i].url).appendTo(description);
 
               
-            //    content.append(header, description);
-            //    card.append(imageDiv, content);
-            //    resultSection.append(card);
+               content.append(header, description);
+               card.append(imageDiv, content);
+               resultSection.append(card);
             
             // ==================================================================================================
             //    TESTING ITEM LAYOUT
 
-                var card = $("<div class='ui card'>");
-                var uiItemsDiv = $("<div class='ui items'>");
-                var itemsDiv = $("<div class='item'>");
+                // var card = $("<div class='ui card'>");
+                // var uiItemsDiv = $("<div class='ui items'>");
+                // var itemsDiv = $("<div class='item'>");
 
-                var imageDiv = $("<div class='image'>");
-                var image = $("<img />").appendTo(imageDiv);
-                image.attr("src", response.businesses[i].image_url);
+                // var imageDiv = $("<div class='image'>");
+                // var image = $("<img />").appendTo(imageDiv);
+                // image.attr("src", response.businesses[i].image_url);
 
-                var content = $("<div class='content'>");
-                var header = $("<div class='header'>").appendTo(content);
-                $("<h4>").text(response.businesses[i].name).appendTo(header);
+                // var content = $("<div class='content'>");
+                // var header = $("<div class='header'>").appendTo(content);
+                // $("<h4>").text(response.businesses[i].name).appendTo(header);
 
-                var description = $("<div class='description'>").appendTo(content);
-                $("<p>").text(response.businesses[i].rating + " stars").appendTo(description);
-                $("<p>").text(response.businesses[i].display_phone).appendTo(description);
-                $("<p>").text(response.businesses[i].location.display_address[0]).appendTo(description);
-                $("<p>").text(response.businesses[i].location.display_address[1]).appendTo(description);
+                // var description = $("<div class='description'>").appendTo(content);
+                // $("<p>").text(response.businesses[i].rating + " stars").appendTo(description);
+                // $("<p>").text(response.businesses[i].display_phone).appendTo(description);
+                // $("<p>").text(response.businesses[i].location.display_address[0]).appendTo(description);
+                // $("<p>").text(response.businesses[i].location.display_address[1]).appendTo(description);
 
-                var link = $("<a>");
-                link.attr("href", response.businesses[i].url);
-                link.text(response.businesses[i].url).appendTo(description);
+                // var link = $("<a>");
+                // link.attr("href", response.businesses[i].url);
+                // link.text(response.businesses[i].url).appendTo(description);
 
                
                
-                itemsDiv.append(imageDiv, content);
-                uiItemsDiv.append(itemsDiv);
-                card.append(uiItemsDiv);
-                resultSection.append(card);
+                // itemsDiv.append(imageDiv, content);
+                // uiItemsDiv.append(itemsDiv);
+                // card.append(uiItemsDiv);
+                // resultSection.append(card);
         
                 
                 
