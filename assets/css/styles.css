@@ -8,12 +8,13 @@ body{
  }
 
  .txHead{
-    font-family: 'Monofett', cursive;
+    font-family: 'Barrio', cursive;
     color: black;
     text-align: center;
     font-size: 100px;
     padding: 10px;
     margin: 10px;
+   
  }
  
  .ui.placeholder.segment{
@@ -23,5 +24,34 @@ body{
  .ui.inverted.button {
      color:black;
      border: 2px solid black;
-     box-shadow: 10px 10px 5px grey;
- }
+    }
+    
+    
+ /* .inline {
+     box-shadow: 5px 5px 5px grey;
+     margin: 10px 10px;
+    } */
+
+ .name {
+     margin: 1px;
+     text-shadow: 5px 5px 5px grey;
+ } 
+
+.right.ui.inverted.button {
+   position: relative;
+   left: 120px;
+   box-shadow: 5px 5px 5px grey;
+}
+
+.left.ui.inverted.button { 
+   position: relative;
+   right: 120px;
+   box-shadow: 5px 5px 5px grey;
+}
+
+/* .myButton {
+    color: rgb(255, 255, 255); font-size: 30px; line-height: 30px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 81%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) -25px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+    .myButton:hover {
+    background: #1C6EA4; }
+    .myButton:active {
+    background: #144E75; } */
