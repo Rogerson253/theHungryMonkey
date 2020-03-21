@@ -9,6 +9,7 @@ body{
 
  .txHead{
     font-family: 'Monofett', cursive;
+    color: black;
     text-align: center;
     font-size: 100px;
     padding: 10px;
@@ -18,9 +19,9 @@ body{
  .ui.placeholder.segment{
      background-color: #7CEC9F;
  }
-/* 
- .image {
-     width: 150px;
-     height: 150px;
- } */
- 
+
+ .ui.inverted.button {
+     color:black;
+     border: 2px solid black;
+     box-shadow: 10px 10px 5px grey;
+ }
