@@ -131,7 +131,7 @@ $( document ).ready(function() {
         e.preventDefault();
         yelpCall();
     })
-
+   
 //dont delete this dummy
 });
 

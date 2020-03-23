@@ -3,25 +3,50 @@ body{
     margin: 2%;
     text-align: center;
 }
- .search-bar{
-     margin: 40px;
- }
+.search-bar{
+     margin-top: 10px;
+     margin-bottom: 60px;
+}
 
- .txHead{
-    font-family: 'Monofett', cursive;
+.txHead{
+    font-family: 'Barrio', cursive;
     color: black;
     text-align: center;
     font-size: 100px;
     padding: 10px;
     margin: 10px;
- }
+}
  
- .ui.placeholder.segment{
+.ui.placeholder.segment{
      background-color: #7CEC9F;
- }
+}
 
- .ui.inverted.button {
+.ui.inverted.button {
      color:black;
      border: 2px solid black;
-     box-shadow: 10px 10px 5px grey;
- }
+}
+    
+.inline {
+     margin: 10px 10px;
+}
+
+.name {
+     margin: 1px;
+     text-shadow: 5px 5px 5px grey;
+} 
+
+#restaurantBtn {
+   position: relative;
+   left: 20px;
+   box-shadow: 5px 5px 5px grey !important;
+}
+
+#recipeBtn { 
+   position: relative;
+   right: 20px;
+   box-shadow: 5px 5px 5px grey !important;
+}
+
+#inputField {
+   box-shadow: 5px 5px 5px grey;
+}
