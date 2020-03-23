@@ -4,8 +4,8 @@ var resultSection = $('#results');
 
 function getRecipes() {
     var userInput = $('#inputField').val();
-    console.log(userInput);
     resultSection.empty();
+
     if (userInput !== "") {
 
         var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
@@ -14,26 +14,42 @@ function getRecipes() {
         url: queryURL,
         method: "GET"
         })
-    // We store all of the retrieved data inside of an object called "response"
+    // We store all of the retrieved data inside of an object called "recipeData"
         .then(function(recipeData) {
+            if (recipeData.meals === null) {
+                resultSection.html('<div class="ui massive negative message">' +
+                '<i class="close icon"></i>' +
+                '<div class="header">' +
+                'There\'s no recipes for that entry!' +
+                '</div>' + 
+                '<p>Please try again' +
+                '</p></div>');
 
-            for(var j=0; j < recipeData.meals.length; j++) {
+                $('.close').on('click', function(){
+                    resultSection.empty();
+                });
 
-                var recipeCard = $('<div class ="ui card">')
+                return;
+            }
+            else {
+                for(var j=0; j < recipeData.meals.length; j++) {
 
-                var imgDiv = $('<div class="image">');
-                $('<img src=' + recipeData.meals[j].strMealThumb + '>').appendTo(imgDiv);
-                imgDiv.appendTo(recipeCard);
+                    var recipeCard = $('<div class ="ui card">');
 
-                var cardBody = $('<div class ="content">')
-                $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
-                $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
-                $('<a class="link" href="recipeData.meals[j].strYoutube">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
+                    var imgDiv = $('<div class="image">');
+                    $('<img src=' + recipeData.meals[j].strMealThumb + '>').appendTo(imgDiv);
+                    imgDiv.appendTo(recipeCard);
 
-                cardBody.appendTo(recipeCard);
-                recipeCard.appendTo(resultSection);
+                    var cardBody = $('<div class ="content">')
+                    $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
+                    $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
+                    $('<a class="link" href="recipeData.meals[j].strYoutube">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
+
+                    cardBody.appendTo(recipeCard);
+                    recipeCard.appendTo(resultSection);
 
 
+                }
             }
         });
     }
@@ -64,13 +80,13 @@ function getRecipes() {
             console.log(yelpURL);
           
             for (var i = 0; i < 6; i++) {
-                console.log(response.businesses[i].name);
-                console.log(response.businesses[i].image_url);
-                console.log(response.businesses[i].url);
-                console.log(response.businesses[i].rating);
-                console.log(response.businesses[i].display_phone);
-                console.log(response.businesses[i].location.display_address[0]);
-                console.log(response.businesses[i].location.display_address[1]);
+                // console.log(response.businesses[i].name);
+                // console.log(response.businesses[i].image_url);
+                // console.log(response.businesses[i].url);
+                // console.log(response.businesses[i].rating);
+                // console.log(response.businesses[i].display_phone);
+                // console.log(response.businesses[i].location.display_address[0]);
+                // console.log(response.businesses[i].location.display_address[1]);
             // ======================================================================================================
 
             //    TESTING CARD LAYOUT
