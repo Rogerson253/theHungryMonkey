@@ -43,7 +43,7 @@ function getRecipes() {
                     var cardBody = $('<div class ="content">')
                     $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
                     $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
-                    $('<a class="link" href="recipeData.meals[j].strYoutube">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
+                    $('<a class="link" href="' + recipeData.meals[j].strYoutube + '">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
 
                     cardBody.appendTo(recipeCard);
                     recipeCard.appendTo(resultSection);
@@ -67,7 +67,7 @@ function getRecipes() {
 
     if (queryTerm !== "") {
     
-        var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&term=" + queryTerm;
+        var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&categories=restaurants&term=" + queryTerm;
 
         $.ajax({
             url: yelpURL,
