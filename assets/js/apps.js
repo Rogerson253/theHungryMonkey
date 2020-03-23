@@ -64,59 +64,62 @@ function getRecipes() {
     var queryTerm = $("#inputField").val().trim();
     
     resultSection.empty();
+
+    if (queryTerm !== "") {
     
-    var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&term=" + queryTerm;
+        var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&term=" + queryTerm;
 
-     $.ajax({
-        url: yelpURL,
-        method: "GET",
-        headers: {
-            "Authorization": "Bearer FX7G_LW66z7oBdEKO1pNijgUXQbOknj073l6OGxkmIZ1XWT7J2isalDcZmqv0UC0CM0yj3Mgqkqs-STQDSeOtL-C_RWLhzMbFdV1xdFV5RCmWXPWZz81cMkThT1tXnYx",
-        }
-    })
-
-        .then(function(response){
-            if (response.businesses === null) {
-                resultSection.html('<div class="ui massive negative message">' +
-                '<i class="close icon"></i>' +
-                '<div class="header">' +
-                'There are no restaurants for that entry!' +
-                '</div>' + 
-                '<p>Please try again' +
-                '</p></div>');
-
-                $('.close').on('click', function(){
-                    resultSection.empty();
-                });
-
-                return;
-            }
-                 else {  for (var i = 0; i < response.businesses.length; i++) {
-
-                    var card = $("<div class='ui card'>");
-
-                    var imageLink = $("<a class='image'>");
-                    imageLink.attr("href", response.businesses[i].url);
-
-                    var image = $("<img />").appendTo(imageLink);
-                    image.attr("src", response.businesses[i].image_url);
-            
-                    var content = $("<div class='content'>");
-                    var header = $("<div class='header'>");
-                    $("<h4>").text(response.businesses[i].name).appendTo(header);
-
-                    var description = $("<div class='description'>");
-                    $("<p>").text(response.businesses[i].display_phone).appendTo(description);
-                    $("<p>").text(response.businesses[i].location.display_address[0]).appendTo(description);
-                    $("<p>").text(response.businesses[i].location.display_address[1]).appendTo(description);
-
-                    content.append(header, description);
-                    card.append(imageLink, content);
-                    resultSection.append(card);
-                
-                }
+        $.ajax({
+            url: yelpURL,
+            method: "GET",
+            headers: {
+                "Authorization": "Bearer FX7G_LW66z7oBdEKO1pNijgUXQbOknj073l6OGxkmIZ1XWT7J2isalDcZmqv0UC0CM0yj3Mgqkqs-STQDSeOtL-C_RWLhzMbFdV1xdFV5RCmWXPWZz81cMkThT1tXnYx",
             }
         })
+
+            .then(function(response){
+                if (response.businesses === null) {
+                    resultSection.html('<div class="ui massive negative message">' +
+                    '<i class="close icon"></i>' +
+                    '<div class="header">' +
+                    'There are no restaurants for that entry!' +
+                    '</div>' + 
+                    '<p>Please try again' +
+                    '</p></div>');
+
+                    $('.close').on('click', function(){
+                        resultSection.empty();
+                    });
+
+                    return;
+                }
+                    else {  for (var i = 0; i < response.businesses.length; i++) {
+
+                        var card = $("<div class='ui card'>");
+
+                        var imageLink = $("<a class='image'>");
+                        imageLink.attr("href", response.businesses[i].url);
+
+                        var image = $("<img />").appendTo(imageLink);
+                        image.attr("src", response.businesses[i].image_url);
+                
+                        var content = $("<div class='content'>");
+                        var header = $("<div class='header'>");
+                        $("<h4>").text(response.businesses[i].name).appendTo(header);
+
+                        var description = $("<div class='description'>");
+                        $("<p>").text(response.businesses[i].display_phone).appendTo(description);
+                        $("<p>").text(response.businesses[i].location.display_address[0]).appendTo(description);
+                        $("<p>").text(response.businesses[i].location.display_address[1]).appendTo(description);
+
+                        content.append(header, description);
+                        card.append(imageLink, content);
+                        resultSection.append(card);
+                    
+                    }
+                }
+            })
+        } 
     }
 
 $( document ).ready(function() {
