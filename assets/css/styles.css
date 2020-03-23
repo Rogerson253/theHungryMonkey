@@ -19,6 +19,7 @@ body{
  
 .ui.placeholder.segment{
      background-color: #7CEC9F;
+     margin:20px;
 }
 
 .ui.inverted.button {
