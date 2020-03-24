@@ -65,7 +65,7 @@ function getRecipes() {
     
     resultSection.empty();
 
-    if (queryTerm !== "") {
+        if (queryTerm !== "") {
     
         var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&categories=restaurants&term=" + queryTerm;
 
@@ -78,6 +78,7 @@ function getRecipes() {
         })
 
             .then(function(response){
+                console.log(response);
                 if (response.businesses === null) {
                     resultSection.html('<div class="ui massive negative message">' +
                     '<i class="close icon"></i>' +
@@ -93,8 +94,8 @@ function getRecipes() {
 
                     return;
                 }
-                    else {  for (var i = 0; i < response.businesses.length; i++) {
-
+                else {  
+                    for (var i = 0; i < response.businesses.length; i++) {
                         var card = $("<div class='ui card'>");
 
                         var imageLink = $("<a class='image'>");
@@ -123,12 +124,15 @@ function getRecipes() {
     }
 
 $( document ).ready(function() {
+
     $('#recipeBtn').on('click', function(e){
         e.preventDefault();
         getRecipes();
     })
+
     $("#restaurantBtn").on("click", function(e) {
         e.preventDefault();
+        console.log('clicky');
         yelpCall();
     })
    
