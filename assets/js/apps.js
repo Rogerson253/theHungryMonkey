@@ -67,7 +67,7 @@ function getRecipes() {
 
     if (queryTerm !== "") {
     
-        var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&term=" + queryTerm;
+        var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&categories=restaurants&limit=5&term=" + queryTerm;
 
         $.ajax({
             url: yelpURL,
