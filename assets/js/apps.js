@@ -1,4 +1,4 @@
-
+//global variable
 var resultSection = $('#results');
 
 
@@ -43,11 +43,10 @@ function getRecipes() {
                     var cardBody = $('<div class ="content">')
                     $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
                     $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
-                    $('<a class="link" href="recipeData.meals[j].strYoutube">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
+                    $('<a class="link" href="' + recipeData.meals[j].strYoutube + '">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
 
                     cardBody.appendTo(recipeCard);
                     recipeCard.appendTo(resultSection);
-
 
                 }
             }
@@ -65,9 +64,9 @@ function getRecipes() {
     
     resultSection.empty();
 
-    if (queryTerm !== "") {
+        if (queryTerm !== "") {
     
-        var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&term=" + queryTerm;
+        var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&categories=restaurants&term=" + queryTerm;
 
         $.ajax({
             url: yelpURL,
@@ -78,11 +77,12 @@ function getRecipes() {
         })
 
             .then(function(response){
-                if (response.businesses === null) {
+                console.log(response);
+                if (response.businesses.length === 0) {
                     resultSection.html('<div class="ui massive negative message">' +
                     '<i class="close icon"></i>' +
                     '<div class="header">' +
-                    'There are no restaurants for that entry!' +
+                    'There\'s no restaurants for that entry!' +
                     '</div>' + 
                     '<p>Please try again' +
                     '</p></div>');
@@ -93,8 +93,8 @@ function getRecipes() {
 
                     return;
                 }
-                    else {  for (var i = 0; i < response.businesses.length; i++) {
-
+                else {  
+                    for (var i = 0; i < response.businesses.length; i++) {
                         var card = $("<div class='ui card'>");
 
                         var imageLink = $("<a class='image'>");
@@ -122,11 +122,14 @@ function getRecipes() {
         } 
     }
 
+
 $( document ).ready(function() {
+
     $('#recipeBtn').on('click', function(e){
         e.preventDefault();
         getRecipes();
     })
+
     $("#restaurantBtn").on("click", function(e) {
         e.preventDefault();
         yelpCall();
