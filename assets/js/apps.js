@@ -1,4 +1,4 @@
-
+//global variable
 var resultSection = $('#results');
 
 
@@ -48,7 +48,6 @@ function getRecipes() {
                     cardBody.appendTo(recipeCard);
                     recipeCard.appendTo(resultSection);
 
-
                 }
             }
         });
@@ -79,11 +78,11 @@ function getRecipes() {
 
             .then(function(response){
                 console.log(response);
-                if (response.businesses === null) {
+                if (response.businesses.length === 0) {
                     resultSection.html('<div class="ui massive negative message">' +
                     '<i class="close icon"></i>' +
                     '<div class="header">' +
-                    'There are no restaurants for that entry!' +
+                    'There\'s no restaurants for that entry!' +
                     '</div>' + 
                     '<p>Please try again' +
                     '</p></div>');
@@ -123,6 +122,7 @@ function getRecipes() {
         } 
     }
 
+
 $( document ).ready(function() {
 
     $('#recipeBtn').on('click', function(e){
@@ -132,7 +132,6 @@ $( document ).ready(function() {
 
     $("#restaurantBtn").on("click", function(e) {
         e.preventDefault();
-        console.log('clicky');
         yelpCall();
     })
    
