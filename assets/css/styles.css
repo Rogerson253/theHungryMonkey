@@ -51,3 +51,11 @@ body{
 #inputField {
    box-shadow: 5px 5px 5px grey;
 }
+
+.monkey{
+    max-width: 100px;
+}
+
+.banana{
+     max-width: 30px;
+}
