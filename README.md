@@ -3,26 +3,31 @@
 ## Live Link
 https://sammiefrog.github.io/theHungryMonkey/
 
-## purpuse of the app
-helps find recipes of food you want to cook or restaurants if you want to dine somewhere near by 
+## Contributors 
+#### Sammantha Sasenick @sammiefrog
+#### Rodgerson Jean-Charles @rodgerson253
+#### Iean Hennig @ieanhennig
+#### Garrett Griffey @garrettwgriffey
 
-## Instructions
-type  any food in the search bar 
-then ether hit get recipes or get restaurants 
-the space underneath will fill up with your search results 
-then you can ether pick the youtube link for the recipe 
-or get the name and location of the restaurant
+## Technology Stack 
+HTML, CSS, Javascript, JQuery, Semantic UI
 
+## Description
+Using API data bases, a user can search for a particular meal and retrieve their choice of local restaurants or recipes of the searched dish.
 
-## Built With
-HTML/CSS
-JavaScript
-jQuery
-mealdb
-yelp
+### Contact 
+* #### Name: Sammantha Sasenick (@sammiefrog)
+* #### Email: [sammiefrog@live.com](sammiefrog@live.com)
+* #### LinkedIn: http://www.linkedin.com/in/sammantha-sasenick412
 
-## Authors
-Sammantha Sasenick
-Rogerson Jean-Charles
-Garret Griffey 
-Iean Hennig
+* #### Name: Rogerson Jean-Charles (@rogerson253)
+* #### Email: [rogerson253@gmail.com](rogerson253@gmail.com)
+* #### LinkedIn: https://www.linkedin.com/in/rogerson-jean-charles253
+
+* #### Name: Iean Hennig (@iean-hennig)
+* #### Email: [ieanhennig8@gmail.com](ieanhennig8@gmail.com)
+* #### Linkedin: http://www.linkedin.com/in/ieanhennig
+
+* #### Name: Garrett Griffey (@garrettwgriffey)
+* #### Email: [garrettwgriffey@gmail.com](garrettwgriffey@gmail.com)
+* #### LinkedIn: http://www.linkedin.com/in/garrettwgriffey
