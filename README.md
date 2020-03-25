@@ -3,17 +3,17 @@
 ## Live Link
 https://sammiefrog.github.io/theHungryMonkey/
 
-### Contributors 
+## Contributors 
 #### Sammantha Sasenick @sammiefrog
 #### Rodgerson Jean-Charles @rodgerson253
 #### Iean Hennig @ieanhennig
 #### Garrett Griffey @garrettwgriffey
 
-### Technology Stack 
-#### HTML, CSS, Javascript, JQuery, Semantic UI
+## Technology Stack 
+HTML, CSS, Javascript, JQuery, Semantic UI
 
-### About
-#### Using API data bases, a user can search for a particular meal and retrieve their choice of local restaurants or recipes of the searched dish.
+## Description
+Using API data bases, a user can search for a particular meal and retrieve their choice of local restaurants or recipes of the searched dish.
 
 ### Contact 
 * #### Name: Sammantha Sasenick (@sammiefrog)
@@ -31,6 +31,3 @@ https://sammiefrog.github.io/theHungryMonkey/
 * #### Name: Garrett Griffey (@garrettwgriffey)
 * #### Email: [garrettwgriffey@gmail.com](garrettwgriffey@gmail.com)
 * #### LinkedIn: http://www.linkedin.com/in/garrettwgriffey
-
-
-
