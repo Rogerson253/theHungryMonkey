@@ -1,57 +1,65 @@
-body{
-    background-color:#218F76 ;
-    margin: 2%;
-    text-align: center;
+body {
+background-color:#218F76 ;
+margin: 2%;
+text-align: center;
 }
-.search-bar{
-     margin-top: 10px;
-     margin-bottom: 60px;
+.search-bar {
+margin-top: 10px;
+margin-bottom: 60px;
 }
 
-.txHead{
-    font-family: 'Barrio', cursive;
-    color: black;
-    text-align: center;
-    font-size: 100px;
-    padding: 10px;
-    margin: 10px;
+.txHead {
+font-family: 'Barrio', cursive;
+color: black;
+text-align: center;
+font-size: 100px;
+padding: 10px;
+margin: 10px;
 }
- 
-.ui.placeholder.segment{
-     background-color: #7CEC9F;
-     margin:20px;
+
+.ui.placeholder.segment {
+background-color: #7CEC9F;
+margin:20px;
 }
 
 .ui.inverted.button {
-     color:black;
-     border: 2px solid black;
+color:black;
+border: 2px solid black;
 }
-    
+
 .inline {
-     margin: 10px 10px;
+margin: 10px 10px;
 }
 
 .name {
-     margin: 1px;
-     text-shadow: 5px 5px 5px grey;
-} 
-
-#restaurantBtn {
-   position: relative;
-   left: 20px;
-   box-shadow: 5px 5px 5px grey !important;
+margin: 1px;
+text-shadow: 5px 5px 5px grey;
 }
 
-#recipeBtn { 
-   position: relative;
-   right: 20px;
-   box-shadow: 5px 5px 5px grey !important;
+#restaurantBtn {
+position: relative;
+left: 20px;
+box-shadow: 5px 5px 5px grey !important;
+}
+
+#recipeBtn {
+position: relative;
+right: 20px;
+box-shadow: 5px 5px 5px grey !important;
 }
 
 #inputField {
-   box-shadow: 5px 5px 5px grey;
+box-shadow: 5px 5px 5px grey;
 }
 
-.monkey{
-    max-width: 100px;
+.monkey {
+max-width: 100px;
 }
+
+footer {
+background-color: #7CEC9F;
+margin-top: 10px;
+margin: 20px;
+margin-bottom: 0;
+}
+
