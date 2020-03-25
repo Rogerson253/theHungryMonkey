@@ -27,7 +27,7 @@ Using API calls, a user can search for a particular meal and retrieve a list of 
 
 #### Iean Hennig (@iean-hennig)
 * Email: [ieanhennig8@gmail.com](ieanhennig8@gmail.com)
-* Linkedin: http://www.linkedin.com/in/ieanhennig  
+* Linkedin: https://www.linkedin.com/in/iean-hennig-a293941a1/ 
 
 #### Garrett Griffey (@garrettwgriffey)
 * Email: [garrettwgriffey@gmail.com](garrettwgriffey@gmail.com)
