@@ -11,61 +11,61 @@ function getRecipes() {
         var queryURL = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + userInput;
 
         $.ajax({
-        url: queryURL,
-        method: "GET"
+            url: queryURL,
+            method: "GET"
         })
-    // We store all of the retrieved data inside of an object called "recipeData"
-        .then(function(recipeData) {
-            if (recipeData.meals === null) {
-                resultSection.html('<div class="ui massive negative message">' +
-                '<i class="close icon"></i>' +
-                '<div class="header">' +
-                'There\'s no recipes for that entry!' +
-                '</div>' + 
-                '<p>Please try again' +
-                '</p></div>');
+            // We store all of the retrieved data inside of an object called "recipeData"
+            .then(function (recipeData) {
+                if (recipeData.meals === null) {
+                    resultSection.html('<div class="ui massive negative message">' +
+                        '<i class="close icon"></i>' +
+                        '<div class="header">' +
+                        'There\'s no recipes for that entry!' +
+                        '</div>' +
+                        '<p>Please try again' +
+                        '</p></div>');
 
-                $('.close').on('click', function(){
-                    resultSection.empty();
-                });
+                    $('.close').on('click', function () {
+                        resultSection.empty();
+                    });
 
-                return;
-            }
-            else {
-                for(var j=0; j < recipeData.meals.length; j++) {
-
-                    var recipeCard = $('<div class ="ui card">');
-
-                    var imgDiv = $('<div class="image">');
-                    $('<img src=' + recipeData.meals[j].strMealThumb + '>').appendTo(imgDiv);
-                    imgDiv.appendTo(recipeCard);
-
-                    var cardBody = $('<div class ="content">')
-                    $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
-                    $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
-                    $('<a class="link" href="' + recipeData.meals[j].strYoutube + '">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
-
-                    cardBody.appendTo(recipeCard);
-                    recipeCard.appendTo(resultSection);
-
+                    return;
                 }
-            }
-        });
+                else {
+                    for (var j = 0; j < recipeData.meals.length; j++) {
+
+                        var recipeCard = $('<div class ="ui card">');
+
+                        var imgDiv = $('<div class="image">');
+                        $('<img src=' + recipeData.meals[j].strMealThumb + '>').appendTo(imgDiv);
+                        imgDiv.appendTo(recipeCard);
+
+                        var cardBody = $('<div class ="content">')
+                        $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
+                        $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
+                        $('<a class="link" href="' + recipeData.meals[j].strYoutube + '">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
+
+                        cardBody.appendTo(recipeCard);
+                        recipeCard.appendTo(resultSection);
+
+                    }
+                }
+            });
     }
 
 }
 
 
 
-    
-   function yelpCall() {
-    
+
+function yelpCall() {
+
     var queryTerm = $("#inputField").val().trim();
-    
+
     resultSection.empty();
 
-        if (queryTerm !== "") {
-    
+    if (queryTerm !== "") {
+
         var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&categories=restaurants&term=" + queryTerm;
 
         $.ajax({
@@ -76,24 +76,24 @@ function getRecipes() {
             }
         })
 
-            .then(function(response){
+            .then(function (response) {
                 console.log(response);
                 if (response.businesses.length === 0) {
                     resultSection.html('<div class="ui massive negative message">' +
-                    '<i class="close icon"></i>' +
-                    '<div class="header">' +
-                    'There\'s no restaurants for that entry!' +
-                    '</div>' + 
-                    '<p>Please try again' +
-                    '</p></div>');
+                        '<i class="close icon"></i>' +
+                        '<div class="header">' +
+                        'There\'s no restaurants for that entry!' +
+                        '</div>' +
+                        '<p>Please try again' +
+                        '</p></div>');
 
-                    $('.close').on('click', function(){
+                    $('.close').on('click', function () {
                         resultSection.empty();
                     });
 
                     return;
                 }
-                else {  
+                else {
                     for (var i = 0; i < response.businesses.length; i++) {
                         var card = $("<div class='ui card'>");
 
@@ -102,7 +102,7 @@ function getRecipes() {
 
                         var image = $("<img />").appendTo(imageLink);
                         image.attr("src", response.businesses[i].image_url);
-                
+
                         var content = $("<div class='content'>");
                         var header = $("<div class='header'>");
                         $("<h4>").text(response.businesses[i].name).appendTo(header);
@@ -115,26 +115,26 @@ function getRecipes() {
                         content.append(header, description);
                         card.append(imageLink, content);
                         resultSection.append(card);
-                    
+
                     }
                 }
             })
-        } 
     }
+}
 
 
-$( document ).ready(function() {
+$(document).ready(function () {
 
-    $('#recipeBtn').on('click', function(e){
+    $('#recipeBtn').on('click', function (e) {
         e.preventDefault();
         getRecipes();
     })
 
-    $("#restaurantBtn").on("click", function(e) {
+    $("#restaurantBtn").on("click", function (e) {
         e.preventDefault();
         yelpCall();
     })
-   
-//dont delete this dummy
+
+    //dont delete this dummy
 });
 
