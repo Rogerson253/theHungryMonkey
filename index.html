@@ -8,66 +8,67 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Barrio|Bungee+Inline|Bungee+Shade|Cabin+Sketch|Carrois+Gothic+SC|Codystar|Eater|Frijole|Gaegu|Galindo|Give+You+Glory|Gloria+Hallelujah|Henny+Penny|Long+Cang|Love+Ya+Like+A+Sister|Monofett|Mountains+of+Christmas|Pacifico|Permanent+Marker|Princess+Sofia|Reenie+Beanie|Vast+Shadow|Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Amatic+SC|Barrio|Bungee+Inline|Bungee+Shade|Cabin+Sketch|Carrois+Gothic+SC|Codystar|Eater|Frijole|Gaegu|Galindo|Give+You+Glory|Gloria+Hallelujah|Henny+Penny|Long+Cang|Love+Ya+Like+A+Sister|Monofett|Mountains+of+Christmas|Pacifico|Permanent+Marker|Princess+Sofia|Reenie+Beanie|Vast+Shadow|Waiting+for+the+Sunrise&display=swap"
+    rel="stylesheet">
   <link rel="icon" href="assets/image/monkeyFaceCropped.jpg" type="image/gif" sizes="16x16">
   <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
 
 <body>
-  <div class = "row">
-    <div class = "twelve wide column">
+  <div class="row">
+    <div class="twelve wide column">
 
-<!-- beginning of placeholder -->
-    <div class="ui placeholder segment">
+      <!-- beginning of placeholder -->
+      <div class="ui placeholder segment">
 
-      <!-- responsive heading -->
-        <div class="ui txHead" >
+        <!-- responsive heading -->
+        <div class="ui txHead">
           <p class="name" style="text-align:center/left/right;">The Hungry Monkey</p>
           <img class="monkey" src="assets\image\monkey.png">
         </div>
 
         <!-- this is the search bar -->
-      <div class="ui grid center aligned">
-        <div class="ui massive icon input search-bar">
-          <input type="text" placeholder="Whatcha hungry for?" id="inputField">
-          <i class="utensils icon"></i>
+        <div class="ui grid center aligned">
+          <div class="ui massive icon input search-bar">
+            <input type="text" placeholder="Whatcha hungry for?" id="inputField">
+            <i class="utensils icon"></i>
+          </div>
         </div>
-      </div>
 
-      <!-- buttons -->
-      <div class="inline">
-        <button class="left ui inverted button" id="recipeBtn">Feelin' productive? Show me recipes</button>
-        <button class="right ui inverted button" id="restaurantBtn">Feelin' lazy? Show me restaurants</button>
+        <!-- buttons -->
+        <div class="inline">
+          <button class="left ui inverted button" id="recipeBtn">Feelin' productive? Show me recipes</button>
+          <button class="right ui inverted button" id="restaurantBtn">Feelin' lazy? Show me restaurants</button>
+        </div>
+        <!-- end of placeholder div -->
       </div>
-<!-- end of placeholder div -->
+    </div>
+    <!-- end of row -->
+  </div>
+
+  <div class="row">
+    <div class="twelve wide column">
+
+      <!-- results container -->
+      <div class="container ui centered cards" id="results">
+        <br>
+
+      </div>
     </div>
   </div>
-  <!-- end of row -->
-</div>
 
-<div class="row">
-  <div class="twelve wide column">
-    
-  <!-- results container -->
-    <div class="container ui centered cards" id="results">
-      <br>
+  <footer>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+  </footer>
 
-    </div>
-  </div>
-</div>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
 
-<footer>
-  <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-</footer>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-
-<script src="assets/js/apps.js"></script>
+  <script src="assets/js/apps.js"></script>
 </body>
 
 </html>
