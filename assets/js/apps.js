@@ -66,6 +66,7 @@ function yelpCall() {
 
         var yelpURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=nashville&categories=restaurants&term=" + queryTerm;
 
+        // Pulls response from the Yelp api
         $.ajax({
             url: yelpURL,
             method: "GET",
@@ -75,7 +76,7 @@ function yelpCall() {
         })
 
             .then(function (response) {
-                console.log(response);
+            //    If an entry has no restaurants, it will create a message
                 if (response.businesses.length === 0) {
                     resultSection.html('<div class="ui massive negative message">' +
                         '<i class="close icon"></i>' +
@@ -91,15 +92,10 @@ function yelpCall() {
 
                     return;
                 }
+                // Creates cards if there are restaurants for that entry
                 else {
                     for (var i = 0; i < response.businesses.length; i++) {
                         var card = $("<div class='ui card'>");
-
-                        var imageLink = $("<a class='image'>");
-                        imageLink.attr("href", response.businesses[i].url);
-
-                        var image = $("<img />").appendTo(imageLink);
-                        image.attr("src", response.businesses[i].image_url);
 
                         var content = $("<div class='content'>");
                         var header = $("<div class='header'>");
@@ -110,9 +106,19 @@ function yelpCall() {
                         $("<p>").text(response.businesses[i].location.display_address[0]).appendTo(description);
                         $("<p>").text(response.businesses[i].location.display_address[1]).appendTo(description);
 
-                        content.append(header, description);
-                        card.append(imageLink, content);
-                        resultSection.append(card);
+                        // Conditional that controls what prints based on the image
+                        if (response.businesses[i].image_url !== "") {
+                            var imageLink = $("<a class='image'>");
+                            imageLink.attr("href", response.businesses[i].url);
+
+                            var image = $("<img />").appendTo(imageLink);
+                            image.attr("src", response.businesses[i].image_url);
+
+                            content.append(header, description);
+                            card.append(imageLink, content);
+                            resultSection.append(card);
+
+                        }
 
                     }
                 }
@@ -122,12 +128,13 @@ function yelpCall() {
 
 
 $(document).ready(function () {
-
+    // Button click to show recipes
     $('#recipeBtn').on('click', function (e) {
         e.preventDefault();
         getRecipes();
     })
-
+    
+    // Button click to show restaurants
     $("#restaurantBtn").on("click", function (e) {
         e.preventDefault();
         yelpCall();
