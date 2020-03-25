@@ -33,6 +33,8 @@ function getRecipes() {
                 }
                 else {
                     for (var j = 0; j < recipeData.meals.length; j++) {
+                        //Not showing recipe cards if no link is present
+                        if (recipeData.meals[j].strYoutube !== ""){
 
                         var recipeCard = $('<div class ="ui card">');
 
@@ -43,11 +45,15 @@ function getRecipes() {
                         var cardBody = $('<div class ="content">')
                         $('<h4>').text(recipeData.meals[j].strMeal).appendTo(cardBody);
                         $('<h4>').text(recipeData.meals[j].strArea).appendTo(cardBody);
+
+                        
+
                         $('<a class="link" href="' + recipeData.meals[j].strYoutube + '">').text(recipeData.meals[j].strYoutube).appendTo(cardBody);
 
                         cardBody.appendTo(recipeCard);
                         recipeCard.appendTo(resultSection);
 
+                        }
                     }
                 }
             });
