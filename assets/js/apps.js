@@ -56,8 +56,6 @@ function getRecipes() {
 }
 
 
-
-
 function yelpCall() {
 
     var queryTerm = $("#inputField").val().trim();
