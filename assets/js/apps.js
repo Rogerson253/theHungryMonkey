@@ -114,11 +114,13 @@ function yelpCall() {
 
                         // Conditional that controls what prints based on the image
                         if (response.businesses[i].image_url !== "") {
+
                             var imageLink = $("<a class='image'>");
                             imageLink.attr("href", response.businesses[i].url);
 
                             var image = $("<img />").appendTo(imageLink);
                             image.attr("src", response.businesses[i].image_url);
+                            image.height("250px");
 
                             content.append(header, description);
                             card.append(imageLink, content);
